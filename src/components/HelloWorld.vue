@@ -1,7 +1,5 @@
 <script setup lang="ts">
 import { i18t } from '@/shared/i18n/i18n';
-
-defineProps<{ msg: string }>();
 </script>
 
 <template>
@@ -10,5 +8,5 @@ defineProps<{ msg: string }>();
   </h1>
 </template>
 
-<style scoped>
+<style lang="less" scoped>
 </style>
