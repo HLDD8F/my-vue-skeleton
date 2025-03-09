@@ -1,7 +1,7 @@
 import { fileURLToPath, URL } from 'node:url';
 import vue from '@vitejs/plugin-vue';
 import AutoImport from 'unplugin-auto-import/vite';
-// import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers';
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
 import Components from 'unplugin-vue-components/vite';
 import { defineConfig } from 'vite';
 
@@ -20,18 +20,12 @@ export default defineConfig({
         'vue',
         'vitest'
       ],
-      dts: './auto-imports.d.ts'
+      dts: './auto-imports.d.ts',
+      resolvers: [ElementPlusResolver()]
     }),
-    Components(
-      // {
-      //   resolvers: [
-      //     AntDesignVueResolver({
-      //       importStyle: false // css in js
-      //     })
-      //   ],
-      //   types: []
-      // }
-    )
+    Components({
+      resolvers: [ElementPlusResolver()]
+    })
   ],
   resolve: {
     alias: {
